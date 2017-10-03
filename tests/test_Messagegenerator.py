@@ -29,9 +29,6 @@ class TestMessageGeneratorCore(unittest.TestCase):
         u = mg2.get_message()
         self.assertEqual(u.message.bot.username, "AnotherBot")
 
-        with self.assertRaises(BadBotException):
-            mg3 = MessageGenerator(bot="Yeah!")
-
     def test_private_message(self):
         u = self.mg.get_message(private=True)
         self.assertEqual(u.message.from_user.id, u.message.chat.id)

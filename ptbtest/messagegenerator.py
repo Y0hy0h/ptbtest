@@ -49,12 +49,7 @@ class MessageGenerator(PtbGenerator):
         self.idgen = self._gen_id()
         self.ug = UserGenerator()
         self.cg = ChatGenerator()
-        if not bot:
-            self.bot = Mockbot()
-        elif isinstance(bot, Mockbot):
-            self.bot = bot
-        else:
-            raise BadBotException
+        self.bot = bot or Mockbot()
 
     def _gen_id(self):
         x = 1

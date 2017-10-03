@@ -43,12 +43,7 @@ class InlineQueryGenerator(PtbGenerator):
     def __init__(self, bot=None):
         PtbGenerator.__init__(self)
         self.ug = UserGenerator()
-        if not bot:
-            self.bot = Mockbot()
-        elif isinstance(bot, Mockbot):
-            self.bot = bot
-        else:
-            raise BadBotException
+        self.bot = bot or Mockbot()
 
     @update("inline_query")
     def get_inline_query(self,

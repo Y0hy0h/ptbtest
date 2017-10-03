@@ -46,9 +46,6 @@ class TestInlineQueryGenerator(unittest.TestCase):
         iqg2 = InlineQueryGenerator(bot=bot)
         self.assertEqual(bot.username, iqg2.bot.username)
 
-        with self.assertRaises(BadBotException):
-            iqg3 = InlineQueryGenerator(bot="bot")
-
     def test_with_user(self):
         ug = UserGenerator()
         user = ug.get_user()
