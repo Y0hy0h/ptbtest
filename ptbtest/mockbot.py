@@ -26,9 +26,10 @@ import warnings
 
 import time
 
-from ptbmock.mockrequest import MockRequest
 from telegram import (User, ReplyMarkup, TelegramObject)
 from telegram.error import TelegramError
+
+from ptbtest.mockrequest import MockRequest
 
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 
